@@ -17,20 +17,20 @@ class DRCharacter:
         self.character = character
         self.icon = icon
 
-        @property
-        def character(self) -> renpy.character.ADVCharacter:
-            """Character."""
-            return self._character
+    @property
+    def character(self) -> renpy.character.ADVCharacter:
+        """Character."""
+        return self._character
 
-        @character.setter
-        def character(self, value: renpy.character.ADVCharacter):
-            self._character = value
+    @character.setter
+    def character(self, value: renpy.character.ADVCharacter):
+        self._character = value
 
-        @property
-        def icon(self) -> str:
-            """Icon."""
-            return self._icon
+    @property
+    def icon(self) -> str:
+        """Icon."""
+        return self._icon
 
-        @icon.setter
-        def icon(self, value: str):
-            self._icon = value
+    @icon.setter
+    def icon(self, value: str):
+        self._icon = value
