@@ -2,6 +2,7 @@ Flags
 Logs
 Notification
 Character Disct
+IsNullOrWhiteSpace
 
 ## Install
 You can install this library manually: download the zip and extract it in your project folder.
