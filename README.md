@@ -1,3 +1,9 @@
+# Wiki
+Please read this:
+* [Flags](Flags)
+* [Logs](Logs)
+* [Notification](Notification)
+
 ## Install
 You can install this library manually: download the zip and extract it in your project folder.
 But I recommend you to use git submodule:
