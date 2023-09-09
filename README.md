@@ -1,22 +1,14 @@
-## Insert Lib in your Project
+## Install
+You can install this library manually: download the zip and extract it in your project folder.
+But I recommend you to use git submodule:
+```bash
+git submodule add -b python-lib -- https://github.com/DRincs-Productions/renpy-utility-lib 'pythonpackages/renpy_utility'
+git submodule add -b renpy-lib -- https://github.com/DRincs-Productions/renpy-utility-lib 'game/renpy_utility_tool'
+```
 
-I recommend the following ways to include it in your project:
+**AND** create a empty file `__init__.py` into pythonpackages `pythonpackages/` so `pythonpackages/__init__.py`.
 
-- [**Pull branch**](#pull-branch) (to **insert** it into your game and **update** it easily)
-- [**Fork**](https://docs.github.com/en/get-started/quickstart/fork-a-repo) (to improve the repo or create a Toolkit based on mine)
-- [Manually](https://github.com/DRincs-Productions/renpy-template-debug-vscode/releases) (not recommended)
-
-### Pull branch
-
-To **insert** or **update** the Toolkit in your repo with Pull branch I recommend the following procedure:
-
-(only if you want to insert the repo) Create a new empty branch, in the example I'll use **vscode-template**
-
-```shell
-git checkout -b renpy-utility-lib
-git checkout renpy-utility-lib
-git config pull.rebase false
-git pull https://github.com/DRincs-Productions/renpy-utility-lib.git tool-only --allow-unrelated-histories
+## Update new version
+```bash
 git submodule update --init --recursive
-
 ```
