@@ -1,8 +1,7 @@
-# Wiki
-Please read this:
-* [Flags](Flags)
-* [Logs](Logs)
-* [Notification](Notification)
+Flags
+Logs
+Notification
+Character Disct
 
 ## Install
 You can install this library manually: download the zip and extract it in your project folder.
