@@ -1,3 +1,4 @@
+from typing import Optional
 import renpy as renpy
 
 __all__ = [
@@ -12,10 +13,12 @@ class DRCharacter:
         self,
         character: renpy.character.ADVCharacter,
         icon: str,
+        info_screen: Optional[str] = None,
     ):
         """Initialize the DRCharacter class."""
         self.character = character
         self.icon = icon
+        self.info_screen = info_screen
 
     @property
     def character(self) -> renpy.character.ADVCharacter:
@@ -34,3 +37,12 @@ class DRCharacter:
     @icon.setter
     def icon(self, value: str):
         self._icon = value
+
+    @property
+    def info_screen(self) -> Optional[str]:
+        """Info screen. For https://github.com/DRincs-Productions/DS-toolkit"""
+        return self._info_screen
+
+    @info_screen.setter
+    def info_screen(self, value: Optional[str]):
+        self._info_screen = value
