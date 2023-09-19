@@ -32,8 +32,8 @@ init -999 python:
     def isGreaterThan(a= 0, b= 0) -> bool:
         return compare(a, b) > 0
 
-    def round(number: int | float, digits = 1) -> int:
-        return round(number, digits)
+    def convert_to_int(number: int | float) -> int:
+        return int(round_number(number, 0))
 
 label set_background(img):
     scene expression (img) as bg
