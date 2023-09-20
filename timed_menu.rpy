@@ -1,7 +1,7 @@
 init python:
     import time
 
-screen countdown(timer_range, label_call):
+screen countdown(timer_range, not_click_label):
     default end_time = time.time() + timer_range
     default current_time = time.time()
     timer 0.05 repeat True action If(
