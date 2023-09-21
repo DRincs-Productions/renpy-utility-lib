@@ -13,7 +13,9 @@ init python:
     def set_flags(flag_id: str, value: bool):
         return myFlags.set_flags(flag_id, value, flags)
 
-label update_current_flags:
+label update_current_flags(update_dictionary = False):
+    if update_dictionary:
+        $ update_flags()
     if renpy.has_label("update_current_flags_custom"):
         call update_current_flags_custom
     return
