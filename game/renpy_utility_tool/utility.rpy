@@ -1,4 +1,6 @@
 init -999 python:
+    import pythonpackages.renpy_utility.utility as myUtility
+
     def isNullOrEmpty(item: str) -> bool:
         if not item:
             return True
@@ -34,6 +36,9 @@ init -999 python:
 
     def convert_to_int(number: int | float) -> int:
         return int(round(number, 0))
+
+    def all_characters():
+        return myUtility.all_characters(store)
 
 label set_background(img):
     scene expression (img) as bg
