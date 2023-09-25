@@ -26,7 +26,7 @@ def os_path_join(a: str, b: str) -> str:
 
 def all_characters(store) -> list[character.ADVCharacter]:
     my_list: list[character.ADVCharacter] = []
-    for item in store.__dict__():
+    for item in store.__dict__.values():
         if isinstance(item, character.ADVCharacter):
             my_list.append(item)
     return my_list
