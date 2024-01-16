@@ -5,6 +5,7 @@ __all__ = [
     "isNullOrEmpty",
     "IsNullOrWhiteSpace",
     "all_characters",
+    "get_value_by_character_key",
 ]
 
 
@@ -32,12 +33,25 @@ def all_characters(store) -> list[character.ADVCharacter]:
     return my_list
 
 
+def is_equal_characters(
+    character1: Optional[character.ADVCharacter],
+    character2: Optional[character.ADVCharacter],
+):
+    if character1 is None or character2 is None:
+        return False
+    elif character1 is character2:
+        return True
+    elif str(character1) == str(character2):
+        return True
+    return False
+
+
 def get_value_by_character_key(character: character.ADVCharacter, dict: dict):
     if character in dict:
         return dict[character]
     else:
         for key, value in dict.items():
-            if str(character) == str(key):
+            if is_equal_characters(character, key):
                 dict[character] = value
                 del dict[key]
                 return value
@@ -49,7 +63,7 @@ def set_value_by_character_key(character: character.ADVCharacter, dict: dict, va
         dict[character] = value
     else:
         for key in dict.keys():
-            if str(character) == str(key):
+            if is_equal_characters(character, key):
                 dict[character] = value
                 del dict[key]
                 return
@@ -61,7 +75,17 @@ def del_value_by_character_key(character: character.ADVCharacter, dict: dict):
         del dict[character]
     else:
         for key in dict.keys():
-            if str(character) == str(key):
+            if is_equal_characters(character, key):
                 del dict[key]
                 return
         return
+
+
+def find_character_into_list(
+    character: character.ADVCharacter, list: list[character.ADVCharacter]
+):
+    for i in range(len(list)):
+        if is_equal_characters(character, list[i]):
+            list[i] = character
+            return list[i]
+    return None
