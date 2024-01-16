@@ -40,6 +40,9 @@ init -999 python:
     def all_characters():
         return myUtility.all_characters(store)
 
+    def get_value_by_character_key(character, dict):
+        return myUtility.get_value_by_character_key(character, dict)
+
 label set_background(img):
     scene expression (img) as bg
 
