@@ -4,7 +4,7 @@ import renpy.store as store
 
 store.notifications = []
 
-DEFAULT_NOTIFY_DELAY = 10.0
+DEFAULT_NOTIFY_DELAY = 3.0
 
 __all__ = [
     "NotifyEx",
@@ -21,7 +21,7 @@ class NotifyEx(renpy.python.RevertableObject):
     def __init__(
         self,
         message: Optional[str],
-        image: Optional[str],
+        image: Optional[str] = None,
         delay: Optional[float] = None,
     ):
         super(NotifyEx, self).__init__()
@@ -57,7 +57,11 @@ class NotifyEx(renpy.python.RevertableObject):
         self._delay = value
 
 
-def notify_add(message: Optional[str] = None, image: Optional[str] = None, delay: Optional[float] = None):
+def notify_add(
+    message: Optional[str] = None,
+    image: Optional[str] = None,
+    delay: Optional[float] = None,
+):
     store.notifications.append(NotifyEx(message, image, delay))
     if len(store.notifications) == 1:
         renpy.show_screen("notifyEx")
@@ -81,6 +85,5 @@ def notify_remove(value: NotifyEx):
 def notify(notific: NotifyEx):
     """View defined notifications.6
     to use: $ notify(...)"""
-    store.notifications.append(
-        NotifyEx(notific.message, notific.image, notific.delay))
+    store.notifications.append(NotifyEx(notific.message, notific.image, notific.delay))
     return
