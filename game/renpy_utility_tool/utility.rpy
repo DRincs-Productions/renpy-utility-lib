@@ -34,7 +34,7 @@ init -999 python:
     def isGreaterThan(a= 0, b= 0) -> bool:
         return compare(a, b) > 0
 
-    def convert_to_int(number: int | float) -> int:
+    def convert_to_int(number: float) -> int:
         return int(round(number, 0))
 
     def all_characters():
